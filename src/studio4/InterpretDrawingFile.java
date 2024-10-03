@@ -1,5 +1,6 @@
 package studio4;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -19,6 +20,22 @@ public class InterpretDrawingFile {
 		chooser.showOpenDialog(null);
 		File f = new File(chooser.getSelectedFile().getPath());
 		Scanner in = new Scanner(f); //making Scanner with a File
+		
+		String shape = in.next(); 
+		int color1 = in.nextInt(); 
+		int color2 = in.nextInt();
+		int color3 = in.nextInt(); 
+		boolean check = in.nextBoolean(); 
+		double x = in.nextDouble(); 
+		double y = in.nextDouble(); 
+		double halfWidth = in.nextDouble(); 
+		double halfHeight = in.nextDouble(); 
+		
+		Color newColor1 = new Color(color1, color2, color3); 
+		StdDraw.setPenColor(newColor1);
+		
+		StdDraw.filledEllipse(x,y, halfWidth, halfHeight);
+		
 		
 	}
 }
